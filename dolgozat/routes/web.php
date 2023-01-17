@@ -29,5 +29,5 @@ Route::delete('/api/clubs/{id}', [ClubController::class, 'destroy']);
 
 //view-k
 Route::get('/clubs/new', [ClubController::class, 'newView']);
-Route::get('clubs/edit/{id}', ClubController::class, 'editView');
-Route::get('clubs/list', [ClubController::class, 'listView']);
+//Route::get('/clubs/edit/{id}', ClubController::class, 'editView'); //-- ezt nem tudjuk miért nem műkődik
+Route::get('/clubs/list', [ClubController::class, 'listView']);

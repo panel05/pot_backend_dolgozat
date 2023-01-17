@@ -22,4 +22,8 @@ class membership extends Model
 
     public function user_c()
     {    return $this->hasOne(User::class, 'id', 'user_id');   }
+    protected $fillable = [
+        'user_id',
+        'club_id'
+    ];
 }

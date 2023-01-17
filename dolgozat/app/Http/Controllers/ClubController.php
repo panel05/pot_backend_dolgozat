@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\clubs;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class ClubController extends Controller
@@ -38,19 +37,18 @@ class ClubController extends Controller
     }
 
     public function newView(){
-        $users = User::all();
-        return view('clubs.new', ['users' => $users]);
+        $clubs = clubs::all();
+        return view('clubs.new', ['clubs' => $clubs]);
     }
 
     public function editView($id){
-        $users = User::all();
         $clubs = clubs::find($id);
-        return view('clubs.edit', ['users'=>$users, 'clubs' => $clubs]);
+        return view('club.edit', ['clubs' => $clubs]);
 
     }
 
     public function listView(){
         $clubs = clubs::all();
-        return view('club.list', ['clubs' => $clubs]);
+        return view('clubs.list', ['clubs' => $clubs]);
     }
 }

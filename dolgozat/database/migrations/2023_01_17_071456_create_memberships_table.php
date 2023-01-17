@@ -18,8 +18,10 @@ return new class extends Migration
             $table->primary(['user_id', 'club_id']);
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('club_id')->references('club_id')->on('clubs');
+            $table->timestamps();
         });
         membership::create(['user_id'=>1, 'club_id'=>1]);
+        membership::create(['user_id'=>2, 'club_id'=>2]);
     }
 
     /**
